@@ -25,8 +25,8 @@ func main() {
 	valueC := *(*int32)(ptrC)
 
 	fmt.Println("a:", d.a)
-	fmt.Println("b через pointer arithmetic:", valueB)
-	fmt.Println("c через pointer arithmetic:", valueC)
+	fmt.Println("b:", valueB)
+	fmt.Println("c:", valueC)
 
 	x := [5]int32{100, 200, 300, 400, 500}
 	i := 3
@@ -34,5 +34,5 @@ func main() {
 	e := unsafe.Pointer(uintptr(unsafe.Pointer(&x[0])) + uintptr(i)*unsafe.Sizeof(x[0]))
 	valueXi := *(*int32)(e)
 
-	fmt.Println("x[3] через unsafe.Pointer:", valueXi)
+	fmt.Println("x[3]:", valueXi)
 }
